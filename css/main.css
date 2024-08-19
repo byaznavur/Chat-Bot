@@ -112,10 +112,21 @@ body {
   margin-top: 1.5rem;
 }
 
-.chat-list .message p {
+.chat-list .message .text {
   color: var(--text-color);
 }
+.chat-list .message.loading .text {
+  display: none;
+}
 
+.chat-list .message .loading .avatar {
+  animation: rotate 3s linear infinite;
+}
+@keyframes rotate {
+  100% {
+    transform: rotate(360deg);
+  }
+}
 .chat-list .message .avatar {
   width: 40px;
   height: 40px;
@@ -137,13 +148,38 @@ body {
   color: var(--text-color);
   visibility: hidden;
 }
-.chat-list .message:hover .icon {
+.chat-list .message:not(.loading):hover .icon {
   visibility: visible;
 }
 .chat-list .message .icon:hover {
   background: var(--secondary-color);
 }
 
+.chat-list .loading-indicator {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 0.8rem;
+}
+.chat-list .loading-indicator .loading-bar {
+  height: 11px;
+  width: 100%;
+  background: linear-gradient(to right, #4285f4, var(--primary-color), #4285f4);
+  animation: animate 3s linear infinite;
+}
+
+.chat-list .loading-indicator .loading-bar:last-child {
+  width: 70%;
+}
+
+@keyframes animate {
+  0% {
+    background-position: -800px 0;
+  }
+  0% {
+    background-position: 800px 0;
+  }
+}
 /* Typing area styles */
 .typing-area {
   position: fixed;
