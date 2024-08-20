@@ -47,7 +47,7 @@
       </ul>
     </header>
     <div class="chat-list">
-      <div class="message outgoing">
+      <!-- <div class="message outgoing">
         <div class="message-content">
           <img
             class="avatar"
@@ -68,8 +68,8 @@
             voluptas.
           </p>
         </div>
-        <span class="icon material-symbols-rounded">content_copy</span>
       </div>
+      <span class="icon material-symbols-rounded">content_copy</span>
       <div class="message incoming loading">
         <div class="message-content">
           <img class="avatar" src="./image/image.png" alt="Bot avatar" />
@@ -84,7 +84,7 @@
           </div>
         </div>
         <span class="icon material-symbols-rounded">content_copy</span>
-      </div>
+      </div> -->
     </div>
     <!--! ======= -->
     <div class="typing-area">
@@ -102,8 +102,12 @@
         </div>
 
         <div class="action-buttons">
-          <span class="icon material-symbols-rounded">light_mode</span>
-          <span class="icon material-symbols-rounded">delete</span>
+          <span id="toggle-theme-button" class="icon material-symbols-rounded"
+            >light_mode</span
+          >
+          <span id="delete-chat-button" class="icon material-symbols-rounded"
+            >delete</span
+          >
         </div>
       </form>
       <p class="disclaimer-text">
